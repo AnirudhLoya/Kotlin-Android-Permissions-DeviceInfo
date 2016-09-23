@@ -1,55 +1,75 @@
 package io.vrinda.kotlinpermissions
 
-import android.Manifest
 import android.content.pm.PackageManager
-import android.os.Bundle
 import android.support.v4.app.ActivityCompat
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import android.widget.Toast
 
-abstract class PermissionsActivity : AppCompatActivity(), PermissionCallBack {
+abstract class PermissionsActivity : AppCompatActivity() {
 
 
-    private val REQUEST_CAMERA = 0
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        // setContentView(R.layout.activity_permissions)
+
+    private val REQUEST_PERMISSION = 1111
+    private val NEEDED_PERMISSIONS = 2222
+    var pCallback: PermissionCallBack? = null;
+    var permissionsNeed: MutableList<String> = mutableListOf<String>()
+
+    fun requestPermissions(arrays: Array<String>, permissionCallback: PermissionCallBack) {
+        permissionsNeed.clear()
+        pCallback = permissionCallback
+        for (permission in arrays) {
+            if (ActivityCompat.checkSelfPermission(applicationContext, permission) != PackageManager.PERMISSION_GRANTED) {
+                permissionsNeed.add(permission)
+            }
+        }
+        if (permissionsNeed.size > 0) {
+            Log.v("request", "permissions")
+            reuestNeededPermission(permissionsNeed)
+        } else {
+            toast("Permissions Granted")
+        }
     }
 
-
-     fun requestCameraPermission(permissionCallback: PermissionCallBack) {
-        toast("CAMERA permission has NOT been granted. Requesting permission.")
-
-        // BEGIN_INCLUDE(camera_permission_request)
-        if (ActivityCompat.shouldShowRequestPermissionRationale(this,
-                Manifest.permission.CAMERA)) {
-            toast("Displaying camera permission rationale to provide additional context.")
+    fun requestPermissions(permission: String, permissionCallback: PermissionCallBack) {
+        pCallback = permissionCallback
+        if (ActivityCompat.shouldShowRequestPermissionRationale(this, permission)) {
             ActivityCompat.requestPermissions(this,
-                    arrayOf(Manifest.permission.CAMERA),
-                    REQUEST_CAMERA)
-
+                    arrayOf(permission),
+                    REQUEST_PERMISSION)
         } else {
-            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.CAMERA),
-                    REQUEST_CAMERA)
+            ActivityCompat.requestPermissions(this, arrayOf(permission),
+                    REQUEST_PERMISSION)
         }
+    }
+
+    private fun reuestNeededPermission(permissionsNeed: MutableList<String>) {
+        // if (ActivityCompat.shouldShowRequestPermissionRationale(this@PermissionsActivity,permissionsNeed.toTypedArray()))
+        ActivityCompat.requestPermissions(this@PermissionsActivity, permissionsNeed.toTypedArray(), NEEDED_PERMISSIONS)
     }
 
     fun AppCompatActivity.toast(msg: String) {
         Toast.makeText(applicationContext, msg, Toast.LENGTH_SHORT).show()
     }
 
+
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>,
                                             grantResults: IntArray) {
-        if (requestCode == REQUEST_CAMERA) {
+        Log.v("resultss", "" + grantResults[0] + grantResults.toString())
+        if (requestCode == REQUEST_PERMISSION) {
             if (grantResults.size == 1 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 // Camera permission has been granted, preview can be displayed
-                toast("CAMERA permission has now been granted. Showing preview.")
-                permissionGranted()
+                pCallback?.permissionGranted()
             } else {
-                toast("CAMERA permission was NOT granted.")
-
-                permissionDenied()
+                pCallback?.permissionDenied()
             }
+        } else if (requestCode == NEEDED_PERMISSIONS) {
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                pCallback?.permissionGranted()
+            } else {
+                pCallback?.permissionDenied()
+            }
+
         } else {
             super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         }
