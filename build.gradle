@@ -1,25 +1,34 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
+    ext.kotlin_version = '1.0.4'
     ext.kotlin_version = '1.0.3'
     repositories {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.2.0-rc1'
+        classpath 'com.android.tools.build:gradle:2.2.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
+        // Required plugins added to classpath to facilitate pushing to Jcenter/Bintray
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.4.1'
     }
 }
 
 allprojects {
     repositories {
         jcenter()
+        maven { url 'https://bintray.com/anirudhloya/maven' }
     }
 }
-
+tasks.withType(Javadoc) {
+    // Ignores errors from mavenAndroidJavadocs task
+    // (reference: github.com/novoda/bintray-release/issues/71#issuecomment-164324255)
+    options.addStringOption('Xdoclint:none', '-quiet')
+    options.addStringOption('encoding', 'UTF-8')
+}
 task clean(type: Delete) {
     delete rootProject.buildDir
 }

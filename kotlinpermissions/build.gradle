@@ -1,6 +1,31 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'kotlinpermissions'   // Has to be same as your library module name
+
+    publishedGroupId = 'io.vrinda.kotlinpermissions'
+    libraryName = 'Kotlin Android Permissions'
+    artifact = 'kotlinpermissions'     // Has to be same as your library module name
+
+    libraryDescription = 'Kotlin Android Permissions View is Kotlin Library for Android to make Runtime Permissions request easy'
+
+    // Your github repo link
+    siteUrl = 'https://github.com/AnirudhLoya/Kotlin-Android-Permissions-DeviceInfo'
+    gitUrl = 'https://github.com/AnirudhLoya/Kotlin-Android-Permissions-DeviceInfo.git'
+
+    libraryVersion = '1.0'
+
+    developerId = 'aniloya'
+    developerName = 'Anirudh Loya'
+    developerEmail = 'loya.anirudh@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
 android {
     compileSdkVersion 24
     buildToolsVersion "24.0.2"
