@@ -74,4 +74,4 @@ Add this to your app build.gradle
 compile 'io.vrinda.kotlinpermissions:kotlinpermissions:1.0'
 ```
 
-[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Kotlin--Android--Permissions-green.svg?style=true)](https://android-arsenal.com/details/1/4511
+![Android Arsenal(https://img.shields.io/badge/Android%20Arsenal-Kotlin--Android--Permissions-green.svg?style=true)]
