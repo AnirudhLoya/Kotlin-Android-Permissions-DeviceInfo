@@ -1,4 +1,7 @@
 # Kotlin-Android-Permissions-DeviceInfo
+ [![API](https://img.shields.io/badge/API-15%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=15) [![Hex.pm](https://img.shields.io/hexpm/l/plug.svg?maxAge=2592000)](http://www.apache.org/licenses/LICENSE-2.0)
+ [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Kotlin--Android--Permissions-green.svg?style=true)](https://android-arsenal.com/details/1/4511)
+ 
 The easiest Kotlin Library for Android Runtime Permissions &amp; Device Info.
 #ScreenShots
 <img src="https://github.com/AnirudhLoya/Kotlin-Android-Permissions-DeviceInfo/blob/master/call_permission.png" width="300"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
