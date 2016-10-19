@@ -10,8 +10,11 @@ import android.support.v4.widget.DrawerLayout
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import io.vrinda.kotlinpermissions.DeviceInfo
+
 
 class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener, MyFragment.OnFragmentInteractionListener {
     override fun onFragmentInteraction(uri: Uri) {
@@ -23,6 +26,8 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         setContentView(R.layout.activity_home)
         val toolbar = findViewById(R.id.toolbar) as Toolbar
         setSupportActionBar(toolbar)
+        DeviceInfo.getAndroidID(applicationContext)
+        Log.v("Device Nmae",""+ DeviceInfo.getBuildBrand()+ DeviceInfo.getAppName(applicationContext))
 
         val fab = findViewById(R.id.fab) as FloatingActionButton
         fab.setOnClickListener { view -> Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG).setAction("Action", null).show() }

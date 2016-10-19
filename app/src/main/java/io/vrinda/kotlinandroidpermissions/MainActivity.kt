@@ -3,6 +3,7 @@ package io.vrinda.kotlinandroidpermissions
 import android.Manifest
 import android.os.Bundle
 import android.util.Log
+import io.vrinda.kotlinpermissions.DeviceInfo
 import io.vrinda.kotlinpermissions.PermissionCallBack
 import io.vrinda.kotlinpermissions.PermissionsActivity
 import kotlinx.android.synthetic.main.activity_main.*
@@ -11,6 +12,7 @@ class MainActivity : PermissionsActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        Log.v("Device Nmae",""+ DeviceInfo.getBuildBrand()+ DeviceInfo.getAppName(applicationContext))
 
         callPermission.setOnClickListener {
             requestPermissions(Manifest.permission.CALL_PHONE, object : PermissionCallBack {

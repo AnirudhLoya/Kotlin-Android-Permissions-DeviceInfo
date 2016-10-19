@@ -15,7 +15,7 @@ ext {
     siteUrl = 'https://github.com/AnirudhLoya/Kotlin-Android-Permissions-DeviceInfo'
     gitUrl = 'https://github.com/AnirudhLoya/Kotlin-Android-Permissions-DeviceInfo.git'
 
-    libraryVersion = '1.0'
+    libraryVersion = '1.1'
 
     developerId = 'aniloya'
     developerName = 'Anirudh Loya'
