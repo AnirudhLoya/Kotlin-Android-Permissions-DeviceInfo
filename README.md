@@ -82,11 +82,11 @@ DeviceInfo.getBuildBrand()
 DeviceInfo.getAppName(applicationContext)
 ```
 <h2>Device</h2>
-```
-DeviceInfo Methods 
-```
-| Value         | Function Name | Returns  |
-| ------------- |:-------------:| -----:|
+
+<h4>DeviceInfo Methods</h4> 
+
+|Value|functionName|returns
+|---|---|---|
  Android ID      | `getAndroidID()` | String |
 | Device Model     | `getModel()` | String |
 | Manufacturer      | `getManufacturer()` | String |
