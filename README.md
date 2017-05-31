@@ -87,53 +87,53 @@ DeviceInfo Methods
 ```
 | Value         | Function Name | Returns  |
 | ------------- |:-------------:| -----:|
-| Android ID      | ```getAndroidID()``` | String |
-| Device Model     | ```getModel()``` | String |
-| Manufacturer      | ```getManufacturer()``` | String |
-| Product      | ```getProduct()``` | String |
-| Fingerprint      | ```getFingerprint()``` | String |
-| Hardware      | ```getHardware()``` | String |
-| Radio Version      | ```getRadioVer()``` | String |
-| Device      | ```getDevice()``` | String |
-| Board      | ```getBoard()``` | String |
-| Display Version      | ```getDisplayVersion()``` | String |
-| Build Brand      | ```getBuildBrand()``` | String |
-| Build Host      | ```getBuildHost()``` | String |
-| Build Time      | ```getBuildTime()``` | long |
-| Build Tags      | ``` getBuildTags()``` | String| 
-| Build User      | ```getBuildUser()``` | String |
-| Build version Release |``` getBuildVersionRelease()```|String|
-| Build version Name |``` getBuildVersionCodename()```|String|
-| Build version Incremental |``` getBuildVersionIncremental()```|String|
-| Build version Sdk |``` getBuildVersionSDK()```|Int|
-| Screen Display Id |``` getScreenDisplayID()```|String|
-| Get Resolution|```getResolution(applicationContext)```|String|
-| Get Display version|```getDisplayVersion()```|String|
-| Serial      | ```getSerial()``` | String |
-| Os Version      | ```getOsVersion()``` | String |
-| Carrier      | ```getCarrier()``` | String |
-| Language      | ```getLanguage()``` | String |
-| Coutnry      | ```getCountry(applicationContext)``` | String |
-| Network Type      | ```getNetworkType(applicationContext)``` | String |
-| OS code name      | ```getOSCodename()``` | String |
-| OS Version       | ```getOSVersion()``` | String |
-| IMEI       | ```getIMEI()``` | String |
-| IMSI       | ```getIMSI()``` | String |
-| Serial       |```getSerial(applicationContext)```| String|
-| SIM Serial       |```getSIMSerial(applicationContext)```| String|
-| GSFID       |```getGSFID(applicationContext)```| String|
-| BluetoothMac       |```getBluetoothMAC(applicationContext)```| String|
-| PsuedoUniqueID       | ```getPsuedoUniqueID()``` | String |
-| PhoneNo       |```getPhoneNo(applicationContext)```| String|
-| TIME       | ```getTime()``` | String |
-| AppName       | ```getAppName(applicationContext)``` | String |
-| AppVersion       | ```getAppVersion(applicationContext)``` | String |
-| AppVersion Code       | ```getAppVersionCode(applicationContext)``` | String |
-| ActivityName      | ```getActivityName(applicationContext)``` | String |
-| PackageName        | ```getPackageName(applicationContext)``` | String |
-| Accounts        | ```getAccounts(applicationContext)``` | Array<String> |
-| Network Availabilty        | ```isNetworkAvailable(applicationContext)``` | Boolean |
-| Running On Emulator        | ```isRunningOnEmulator(applicationContext)``` | Boolean |
+ Android ID      | `getAndroidID()` | String |
+| Device Model     | `getModel()` | String |
+| Manufacturer      | `getManufacturer()` | String |
+| Product      | `getProduct()` | String |
+| Fingerprint      | `getFingerprint()` | String |
+| Hardware      | `getHardware()` | String |
+| Radio Version      | `getRadioVer()` | String |
+| Device      | `getDevice()` | String |
+| Board      | `getBoard()` | String |
+| Display Version      | `getDisplayVersion()` | String |
+| Build Brand      | `getBuildBrand()` | String |
+| Build Host      | `getBuildHost()` | String |
+| Build Time      | `getBuildTime()` | long |
+| Build Tags      | ` getBuildTags()` | String| 
+| Build User      | `getBuildUser()` | String |
+| Build version Release |` getBuildVersionRelease()`|String|
+| Build version Name |` getBuildVersionCodename()`|String|
+| Build version Incremental |` getBuildVersionIncremental()`|String|
+| Build version Sdk |` getBuildVersionSDK()`|Int|
+| Screen Display Id |` getScreenDisplayID()`|String|
+| Get Resolution|`getResolution(applicationContext)`|String|
+| Get Display version|`getDisplayVersion()`|String|
+| Serial      | `getSerial()` | String |
+| Os Version      | `getOsVersion()` | String |
+| Carrier      | `getCarrier()` | String |
+| Language      | `getLanguage()` | String |
+| Coutnry      | `getCountry(applicationContext)` | String |
+| Network Type      | `getNetworkType(applicationContext)` | String |
+| OS code name      | `getOSCodename()` | String |
+| OS Version       | `getOSVersion()` | String |
+| IMEI       | `getIMEI()` | String |
+| IMSI       | `getIMSI()` | String |
+| Serial       |`getSerial(applicationContext)`| String|
+| SIM Serial       |`getSIMSerial(applicationContext)`| String|
+| GSFID       |`getGSFID(applicationContext)`| String|
+| BluetoothMac       |`getBluetoothMAC(applicationContext)`| String|
+| PsuedoUniqueID       | `getPsuedoUniqueID()` | String |
+| PhoneNo       |`getPhoneNo(applicationContext)`| String|
+| TIME       | `getTime()` | String |
+| AppName       | `getAppName(applicationContext)` | String |
+| AppVersion       | `getAppVersion(applicationContext)` | String |
+| AppVersion Code       | `getAppVersionCode(applicationContext)` | String |
+| ActivityName      | `getActivityName(applicationContext)` | String |
+| PackageName        | `getPackageName(applicationContext)` | String |
+| Accounts        | `getAccounts(applicationContext)` | Array<String> |
+| Network Availabilty        | `isNetworkAvailable(applicationContext)` | Boolean |
+| Running On Emulator        | `isRunningOnEmulator(applicationContext)` | Boolean |
 
 
 
