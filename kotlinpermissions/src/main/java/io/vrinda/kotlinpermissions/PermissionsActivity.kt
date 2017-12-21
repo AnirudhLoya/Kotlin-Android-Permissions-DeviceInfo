@@ -8,12 +8,10 @@ import android.widget.Toast
 
 abstract class PermissionsActivity : AppCompatActivity() {
 
-
-
     private val REQUEST_PERMISSION = 1111
     private val NEEDED_PERMISSIONS = 2222
-    var pCallback: PermissionCallBack? = null;
-    var permissionsNeed: MutableList<String> = mutableListOf<String>()
+    var pCallback: PermissionCallBack? = null
+    var permissionsNeed: MutableList<String> = mutableListOf()
 
     fun requestPermissions(arrays: Array<String>, permissionCallback: PermissionCallBack) {
         permissionsNeed.clear()
@@ -28,6 +26,7 @@ abstract class PermissionsActivity : AppCompatActivity() {
             reuestNeededPermission(permissionsNeed)
         } else {
             toast("Permissions Granted")
+            pCallback?.permissionGranted()
         }
     }
 

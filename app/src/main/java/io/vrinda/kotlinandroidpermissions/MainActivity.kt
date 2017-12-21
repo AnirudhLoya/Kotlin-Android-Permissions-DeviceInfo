@@ -31,7 +31,7 @@ class MainActivity : PermissionsActivity() {
             requestPermissions(arrayOf(android.Manifest.permission.CAMERA, android.Manifest.permission.WRITE_EXTERNAL_STORAGE), object : PermissionCallBack {
                 override fun permissionGranted() {
                     super.permissionGranted()
-                    Log.v("Camera permissions", "Denied")
+                    Log.v("Camera permissions", "Granted")
                 }
 
                 override fun permissionDenied() {
