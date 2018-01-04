@@ -69,23 +69,25 @@ abstract class PermissionFragment : Fragment() {
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        Log.v("resultss", "" + grantResults[0] + grantResults.toString())
-        if (requestCode == REQUEST_PERMISSION) {
-            if (grantResults.size == 1 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                // Camera permission has been granted, preview can be displayed
-                pCallback?.permissionGranted()
-            } else {
-                pCallback?.permissionDenied()
-            }
-        } else if (requestCode == NEEDED_PERMISSIONS) {
-            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                pCallback?.permissionGranted()
-            } else {
-                pCallback?.permissionDenied()
-            }
+        if (grantResults.isNotEmpty()) {
+            Log.v("resultss", "" + grantResults[0] + grantResults.toString())
+            if (requestCode == REQUEST_PERMISSION) {
+                if (grantResults.size == 1 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    // Camera permission has been granted, preview can be displayed
+                    pCallback?.permissionGranted()
+                } else {
+                    pCallback?.permissionDenied()
+                }
+            } else if (requestCode == NEEDED_PERMISSIONS) {
+                if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    pCallback?.permissionGranted()
+                } else {
+                    pCallback?.permissionDenied()
+                }
 
-        } else {
-            super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+            } else {
+                super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+            }
         }
     }
 
